@@ -1,34 +1,22 @@
-var first = prompt("Enter a temperature:");
-var firstUnit = prompt("Enter 'F for Fahrenheit or 'C' for Celsius:").toUpperCase();
-var second;
-var secondUnit;
+var temp1 = prompt("Enter a temperature:");
+var unit1 = prompt("Enter 'F for Fahrenheit or 'C' for Celsius:").toUpperCase();
+var temp2;
+var unit2;
 
-if (firstUnit === "F") {
-    secondUnit = "C";
-} else if (firstUnit === "C") {
-    secondUnit = "F";
+if (unit1 === "F") {
+    unit2 = "C";
+} else if (unit1 === "C") {
+    unit2 = "F";
 }
 
-if (firstUnit === "F") {
-    console.log("You entered: " + first + "\u00B0" + firstUnit);
-    second = first - 32;
-    console.log("First I subtract 32 to get: " + second);
-    second *= 5;
-    console.log("Then I multiply that by 5 to get: " + second);
-    second /= 9;
-    second = Math.round(second * 10) / 10;
-    console.log("Finally I divide that by /9 to get: " + second);
-    console.log(first + "\u00B0" + firstUnit + " is " + second + "\u00B0" + secondUnit + ".");
-} else if (firstUnit === "C") {
-    console.log("You entered: " + first + "\u00B0C");
-    second = first * 9;
-    console.log("First I multiply by 9 to get: " + second);
-    second /= 5;
-    second = Math.round(second * 10) / 10;
-    console.log("Then I divide that by 5 to get: " + second);
-    second += 32;
-    console.log("Finally I add 32 to that to get: " + second);
-    console.log(first + "\u00B0" + firstUnit + " is " + second + "\u00B0" + secondUnit + ".");
+if (unit1 === "F") {
+    temp2 = (temp1 - 32) * 5 / 9;
+    temp2 = Math.round(temp2 * 10) / 10;
+    console.log(temp1 + "\u00B0" + unit1 + " is " + temp2 + "\u00B0" + unit2 + ".");
+} else if (unit1 === "C") {
+    temp2 = temp1 * 9 / 5 + 32;
+    temp2 = Math.round(temp2 * 10) / 10;
+    console.log(temp1 + "\u00B0" + unit1 + " is " + temp2 + "\u00B0" + unit2 + ".");
 }
 
 // function tempConvert(form) {
