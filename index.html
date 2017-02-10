@@ -4,12 +4,24 @@
         <script src="scripts/script.js"></script>
     </head>
     <body>
-        <!--<form name="tempform" action="" method="get">-->
-        <!--        <label for="tempbox">Type in this box:</label>-->
-        <!--        <input type="text" name="tempbox" id="tempbox" value="">-->
-        <!--        <label for="unitbox">Type in this box:</label>-->
-        <!--        <input type="text" name="unitbox" id="unitbox" value="">-->
-        <!--        <input type="button" name="button" value="Make this shouty!" onClick="tempConvert(this.form)">-->
-        <!--</form>-->
+        <form name="tempform" action="" method="get">
+                <p>
+                    <label for="tempBox">Temperature:</label>
+                    <input type="text" name="tempbox" id="tempBox" value="">
+                </p>
+                <p>
+                    <label for="unitBox">Unit to convert to:</label>
+                    <input type="text" name="unitBox" id="unitBox" value="">
+                </p>
+                <input type="button" name="button" value="Convert!" onClick="tempConvertBox(this.form)">
+                <p>
+                    <label for="startBox" name="startLabel">Start:</label>
+                    <input type="text" name="startBox" id="startBox" value="">
+                </p>
+                <p>
+                    <label for="resultBox">Result:</label>
+                    <input type="text" name="resultBox" id="resultBox" value="">
+                </p>
+        </form>
     </body>
 </html>

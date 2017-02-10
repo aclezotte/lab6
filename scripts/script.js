@@ -1,13 +1,13 @@
-function tempConvert(temp1, unit1) {
-    unit1 = unit1.toUpperCase();
+function tempConvert(temp1, unit2) {
+    unit2 = unit2.toUpperCase();
     
     var temp2;
-    var unit2;
+    var unit1;
     
-    if (unit1 === "F") {
-        unit2 = "C";
-    } else if (unit1 === "C") {
-        unit2 = "F";
+    if (unit2 === "F") {
+        unit1 = "C";
+    } else if (unit2 === "C") {
+        unit1 = "F";
     }
     
     if (unit1 === "F") {
@@ -21,12 +21,31 @@ function tempConvert(temp1, unit1) {
     }
 }
 
-tempConvert(7, "c");
+tempConvert(7, "f");
 
 
-// function tempConvert(form) {
-//     var first = form.tempbox.value;
-//     var unit = form.unitbox.value.toUpperCase();
-//     second = first + 1 + unit;
-//     form.tempbox.value = second;
-// }
+function tempConvertBox(form) {
+    var temp1 = form.tempBox.value;
+    var unit2 = form.unitBox.value.toUpperCase();
+    
+    var temp2;
+    var unit1;
+    
+    if (unit2 === "F") {
+        unit1 = "C";
+    } else if (unit2 === "C") {
+        unit1 = "F";
+    }
+    
+    if (unit1 === "F") {
+        temp2 = (temp1 - 32) * 5 / 9;
+        temp2 = Math.round(temp2 * 10) / 10;
+        form.startBox.value = temp1 + "\u00B0" + unit1;
+        form.resultBox.value = temp2 + "\u00B0" + unit2;
+    } else if (unit1 === "C") {
+        temp2 = temp1 * 9 / 5 + 32;
+        temp2 = Math.round(temp2 * 10) / 10;
+        form.startBox.value = temp1 + "\u00B0" + unit1;
+        form.resultBox.value = temp2 + "\u00B0" + unit2;
+    }
+}
