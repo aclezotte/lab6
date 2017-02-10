@@ -41,11 +41,15 @@ function tempConvertBox(form) {
         temp2 = (temp1 - 32) * 5 / 9;
         temp2 = Math.round(temp2 * 10) / 10;
         form.startBox.value = temp1 + "\u00B0" + unit1;
+        document.getElementById('startLabel').innerHTML = "Celsius:";
         form.resultBox.value = temp2 + "\u00B0" + unit2;
+        document.getElementById('resultLabel').innerHTML = "Fahrenheit:";
     } else if (unit1 === "C") {
         temp2 = temp1 * 9 / 5 + 32;
         temp2 = Math.round(temp2 * 10) / 10;
         form.startBox.value = temp1 + "\u00B0" + unit1;
+        document.getElementById('startLabel').innerHTML = "Fahrenheit:";
         form.resultBox.value = temp2 + "\u00B0" + unit2;
+        document.getElementById('resultLabel').innerHTML = "Celsius:";
     }
 }
